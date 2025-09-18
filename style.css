@@ -1,0 +1,66 @@
+/* Estilo general de la página */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(158, 121, 158);
+    margin: 20px;
+}
+
+/* Encabezado principal */
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+/* Subtítulos */
+h2 {
+    color: darkgreen;
+}
+
+/* Párrafos normales */
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Párrafo con clase especial */
+.destacado {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* Lista */
+ul {
+    list-style-type: circle;
+    color: darkred;
+}
+
+img {
+width: 30%;
+height: 40%;
+
+}
+
+nav {
+    background-color: rgb(34, 46, 117);
+    color: rgb(17, 48, 75);
+    display: flex;
+      align-items: center;
+    justify-content: center;
+      gap: 50px;
+}
+nav li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+      align-items: center;
+    justify-content: center; 
+    
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
