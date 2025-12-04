@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE archivo_eventos [
+  <!ELEMENT archivo_eventos (evento*)>
+  <!ELEMENT evento (nombre, invitados, descripcion?)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT invitados (invitado+)>
+  <!ELEMENT invitado (nombre_inv, rol?)>
+  <!ELEMENT nombre_inv (#PCDATA)>
+  <!ELEMENT rol (#PCDATA)>
+  <!ELEMENT descripcion (#PCDATA)>
+]>
+
+<!--XML-->
+<archivo_eventos>
+  <evento>
+    <nombre></nombre>
+    <invitados>
+      <invitado>
+        <nombre_inv></nombre_inv>
+        <rol></rol>
+      </invitado>
+      <invitado>
+        <nombre_inv></nombre_inv>
+      </invitado>
+    </invitados>
+    <descripcion></descripcion>
+  </evento>
+  <evento>
+    <nombre></nombre>
+    <invitados>
+      <invitado>
+        <nombre_inv></nombre_inv>
+        <rol></rol>
+      </invitado>
+    </invitados>
+  </evento>
+</archivo_eventos>

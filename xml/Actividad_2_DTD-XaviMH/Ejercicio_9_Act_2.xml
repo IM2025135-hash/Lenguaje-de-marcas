@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE faq [
+  <!ELEMENT faq (pregunta+)>
+  <!ELEMENT pregunta (titulo, respuesta)>
+  <!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT respuesta (#PCDATA | nota)*>
+  <!ELEMENT nota (#PCDATA)>
+]>
+
+<!--XML-->
+<faq>
+  <pregunta>
+    <titulo></titulo>
+    <respuesta>
+      <nota></nota>
+    </respuesta>
+  </pregunta>
+  <pregunta>
+    <titulo></titulo>
+    <respuesta>
+      <nota></nota>
+    </respuesta>
+  </pregunta>
+</faq>

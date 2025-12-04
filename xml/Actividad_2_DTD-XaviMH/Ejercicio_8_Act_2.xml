@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE registro_pedidos [
+  <!ELEMENT registro_pedidos (pedido*)>
+  <!ELEMENT pedido (cliente, productos, comentario?)>
+  <!ELEMENT cliente (#PCDATA)>
+  <!ELEMENT productos (linea_producto+)>
+  <!ELEMENT linea_producto (nombre, cantidad)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT cantidad (#PCDATA)>
+  <!ELEMENT comentario (#PCDATA)>
+]>
+
+<!--XML-->
+<registro_pedidos>
+  <pedido>
+    <cliente></cliente>
+    <productos>
+      <linea_producto>
+        <nombre></nombre>
+        <cantidad></cantidad>
+      </linea_producto>
+      <linea_producto>
+        <nombre></nombre>
+        <cantidad></cantidad>
+      </linea_producto>
+    </productos>
+    <comentario></comentario>
+  </pedido>
+  <pedido>
+    <cliente></cliente>
+    <productos>
+      <linea_producto>
+        <nombre></nombre>
+        <cantidad></cantidad>
+      </linea_producto>
+    </productos>
+  </pedido>
+</registro_pedidos>

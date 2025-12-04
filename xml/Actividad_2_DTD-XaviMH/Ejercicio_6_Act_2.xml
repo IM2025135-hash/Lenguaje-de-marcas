@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE sistema_escolar [
+  <!ELEMENT sistema_escolar (asignatura+)>
+  <!ELEMENT asignatura (titulo, unidades, aviso?)>
+  <!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT unidades (unidad*)>
+  <!ELEMENT unidad (nombre, contenido)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT contenido (#PCDATA)>
+  <!ELEMENT aviso (#PCDATA)>
+]>
+
+<!--XML-->
+<sistema_escolar>
+  <asignatura>
+    <titulo></titulo>
+    <unidades>
+      <unidad>
+        <nombre></nombre>
+        <contenido></contenido>
+      </unidad>
+      <unidad>
+        <nombre></nombre>
+        <contenido></contenido>
+      </unidad>
+    </unidades>
+    <aviso></aviso>
+  </asignatura>
+  <asignatura>
+    <titulo></titulo>
+    <unidades>
+    </unidades>
+  </asignatura>
+</sistema_escolar>

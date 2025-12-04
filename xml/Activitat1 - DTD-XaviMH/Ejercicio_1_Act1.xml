@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DTD-->
+<!DOCTYPE cursos [
+<!ELEMENT cursos (curso+)>
+<!ELEMENT curso (nombre, profesor, horas)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT profesor (#PCDATA)>
+<!ELEMENT horas (#PCDATA)>
+<!ATTLIST curso
+        codigo ID #REQUIRED
+        modalidad (online | presencial) #REQUIRED>]>
+
+<!--XML-->        
+<cursos>
+    <curso codigo="C01" modalidad="online">
+        <nombre>Curso de Java</nombre>
+        <profesor>Ana Gómez</profesor>
+        <horas>40</horas>
+    </curso>
+
+    <curso codigo="C02" modalidad="presencial">
+        <nombre>Bases de Datos</nombre>
+        <profesor>Pedro Ruiz</profesor>
+        <horas>60</horas>
+    </curso>
+</cursos>

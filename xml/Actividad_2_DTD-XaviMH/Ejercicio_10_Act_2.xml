@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE informe [
+  <!ELEMENT informe (encabezado, materiales, procedimiento, comentario?)>
+  <!ELEMENT encabezado (#PCDATA)>
+  <!ELEMENT materiales (pieza+)>
+  <!ELEMENT pieza (#PCDATA)>
+  <!ELEMENT procedimiento (paso*)>
+  <!ELEMENT paso (#PCDATA)>
+  <!ELEMENT comentario (#PCDATA)>
+]>
+
+<!--XML-->
+<informe>
+  <encabezado></encabezado>
+  <materiales>
+    <pieza></pieza>
+    <pieza></pieza>
+    <pieza></pieza>
+  </materiales>
+  <procedimiento>
+    <paso></paso>
+    <paso></paso>
+    <paso></paso>
+  </procedimiento>
+  <comentario></comentario>
+</informe>

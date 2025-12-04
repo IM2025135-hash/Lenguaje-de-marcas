@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DTD-->
+<!DOCTYPE Informes [
+<!ELEMENT Informes (informe+)>
+<!ELEMENT informe (titulo, Secciones, Nota)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT Secciones (Seccion+)>
+<!ELEMENT Seccion (Subtitulo, Parrafo+)>
+<!ELEMENT Subtitulo (#PCDATA)>
+<!ELEMENT Parrafo (#PCDATA)>
+<!ELEMENT Nota (#PCDATA)>
+]>
+
+<!--XML-->
+<Informes>
+    <informe>
+        <titulo></titulo>
+        <Secciones>
+            <Seccion>
+                <Subtitulo></Subtitulo>
+                <Parrafo></Parrafo>
+            </Seccion>
+        </Secciones>
+        <Nota></Nota>
+    </informe>
+</Informes>

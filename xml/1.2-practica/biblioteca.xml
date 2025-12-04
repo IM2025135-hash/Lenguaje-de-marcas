@@ -1,0 +1,72 @@
+<biblioteca>
+  <libros>
+    <libro id="l1">
+      <titulo>El Quijote</titulo>
+      <autor>Miguel de Cervantes</autor>
+      <editorial>Espasa</editorial>
+      <anio>1605</anio>
+      <genero>Novela</genero>
+    </libro>
+    <libro id="l2">
+      <titulo>Harry Potter y la piedra filosofal</titulo>
+      <autor>J.K. Rowling</autor>
+      <editorial>Salamandra</editorial>
+      <anio>1997</anio>
+      <genero>Fantasía</genero>
+    </libro>
+    <libro id="l3">
+      <titulo>1984</titulo>
+      <autor>George Orwell</autor>
+      <editorial>Secker & Warburg</editorial>
+      <anio>1949</anio>
+      <genero>Ciencia Ficción</genero>
+    </libro>
+    <libro id="l4">
+      <titulo>La Odisea</titulo>
+      <autor>Homero</autor>
+      <editorial>Gredos</editorial>
+      <anio>-800</anio>
+      <genero>Épica</genero>
+    </libro>
+    <libro id="l5">
+      <titulo>El Principito</titulo>
+      <autor>Antoine de Saint-Exupéry</autor>
+      <editorial>Reynal & Hitchcock</editorial>
+      <anio>1943</anio>
+      <genero>Infantil</genero>
+    </libro>
+  </libros>
+
+  <usuarios>
+    <usuario id="u1">
+      <nombre>Ana Fernández</nombre>
+      <curso>4º ESO</curso>
+      <telefono>789654321</telefono>
+    </usuario>
+    <usuario id="u2">
+      <nombre>Pepito Grillo</nombre>
+      <curso>3º ESO</curso>
+      <telefono>656566555</telefono>
+    </usuario>
+    <usuario id="u3">
+      <nombre>Lucía Martínez</nombre>
+      <curso>2º ESO</curso>
+      <telefono>678123456</telefono>
+    </usuario>
+  </usuarios>
+
+  <prestamos>
+    <prestamo>
+      <usuario>Ana Fernández</usuario>
+      <libro>El Quijote</libro>
+      <fechaInicio>2025-05-01</fechaInicio>
+      <fechaFin>2025-05-15</fechaFin>
+    </prestamo>
+    <prestamo>
+      <usuario>Pepito Grillo</usuario>
+      <libro>Harry Potter y la piedra filosofal</libro>
+      <fechaInicio>2025-05-02</fechaInicio>
+      <fechaFin>2025-05-16</fechaFin>
+    </prestamo>
+  </prestamos>
+</biblioteca>

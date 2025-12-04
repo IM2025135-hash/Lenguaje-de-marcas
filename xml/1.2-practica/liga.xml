@@ -1,0 +1,72 @@
+<ligaFutbol>
+  <equipos>
+    <equipo id="e1">
+      <nombre>Leones de Madrid</nombre>
+      <ciudad>Madrid</ciudad>
+      <entrenador>Carlos Gómez</entrenador>
+      <jugadores>
+        <jugador>
+          <nombre>Juan Pérez</nombre>
+          <posicion>Delantero</posicion>
+          <dorsal>9</dorsal>
+        </jugador>
+        <jugador>
+          <nombre>Pedro Martínez</nombre>
+          <posicion>Portero</posicion>
+          <dorsal>1</dorsal>
+        </jugador>
+      </jugadores>
+    </equipo>
+
+    <equipo id="e2">
+      <nombre>Tigres de Sevilla</nombre>
+      <ciudad>Sevilla</ciudad>
+      <entrenador>Rafael López</entrenador>
+      <jugadores>
+        <jugador>
+          <nombre>Luis García</nombre>
+          <posicion>Defensa</posicion>
+          <dorsal>4</dorsal>
+        </jugador>
+        <jugador>
+          <nombre>Carlos Ruiz</nombre>
+          <posicion>Centrocampista</posicion>
+          <dorsal>6</dorsal>
+        </jugador>
+      </jugadores>
+    </equipo>
+
+    <equipo id="e3">
+      <nombre>Águilas de Valencia</nombre>
+      <ciudad>Valencia</ciudad>
+      <entrenador>Fernando Torres</entrenador>
+      <jugadores>
+        <jugador>
+          <nombre>Mario López</nombre>
+          <posicion>Delantero</posicion>
+          <dorsal>10</dorsal>
+        </jugador>
+        <jugador>
+          <nombre>David Sánchez</nombre>
+          <posicion>Portero</posicion>
+          <dorsal>1</dorsal>
+        </jugador>
+      </jugadores>
+    </equipo>
+  </equipos>
+
+  <partidos>
+    <partido>
+      <local>Leones de Madrid</local>
+      <visitante>Tigres de Sevilla</visitante>
+      <fecha>2025-05-10</fecha>
+      <resultado>3-2</resultado>
+    </partido>
+    <partido>
+      <local>Águilas de Valencia</local>
+      <visitante>Leones de Madrid</visitante>
+      <fecha>2025-05-15</fecha>
+      <resultado>1-1</resultado>
+    </partido>
+  </partidos>
+</ligaFutbol>

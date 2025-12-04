@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE Actividades [
+<!ELEMENT Actividades (Actividad+)>
+<!ELEMENT Actividad (Fecha, Hora, Tarea+)>
+<!ELEMENT Fecha (#PCDATA)>
+<!ELEMENT Hora (#PCDATA)>
+<!ELEMENT Tarea (Texto, Extra?)>
+<!ELEMENT Texto (#PCDATA)>
+<!ELEMENT Extra (#PCDATA)>
+]>
+
+<!--XML-->
+<Actividades>
+    <Actividad>
+        <Fecha></Fecha>
+        <Hora></Hora>
+        <Tarea>
+            <Texto></Texto>
+            <Extra></Extra>
+        </Tarea>        
+    </Actividad>
+</Actividades>   

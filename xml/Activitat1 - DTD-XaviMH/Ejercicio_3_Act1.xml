@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DTD-->
+<!DOCTYPE biblioteca [
+<!ELEMENT biblioteca (libro+)>
+<!ELEMENT libro (titulo, autor+, anio)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+ 
+<!ATTLIST libro
+        isbn CDATA #REQUIRED
+        disponible (si | no) #REQUIRED>
+]>
+ 
+<!--XML-->
+<biblioteca>
+    <libro isbn="978-84-376-0494-7" disponible="si">
+        <titulo>Cien años de soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <anio>1967</anio>
+    </libro>
+ 
+    <libro isbn="978-84-670-5190-4" disponible="no">
+        <titulo>La sombra del viento</titulo>
+        <autor>Carlos Ruiz Zafón</autor>
+        <autor>Otro Autor Inventado</autor>
+        <anio>2001</anio>
+    </libro>
+</biblioteca>

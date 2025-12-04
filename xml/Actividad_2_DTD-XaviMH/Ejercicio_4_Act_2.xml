@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE Catalogo [
+  <!ELEMENT Catalogo (Entrada*)>
+  <!ELEMENT Entrada ((Producto | Servicio), Etiqueta*, Resumen?)>
+  <!ELEMENT Producto (#PCDATA)>
+  <!ELEMENT Servicio (#PCDATA)>
+  <!ELEMENT Etiqueta (#PCDATA)>
+  <!ELEMENT Resumen (#PCDATA)>
+]>
+
+<!--XML-->
+<Catalogo>
+    <Entrada>
+        <Producto></Producto>
+        <Etiqueta></Etiqueta>
+        <Resumen></Resumen>
+    </Entrada>
+</Catalogo>

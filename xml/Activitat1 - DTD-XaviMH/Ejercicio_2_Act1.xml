@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DTD-->
+<!DOCTYPE pedidos [
+<!ELEMENT pedidos (pedido+)>
+<!ELEMENT pedido (cliente, fecha, items)>
+<!ELEMENT cliente (nombre, email, telefono)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT items (item+)>
+<!ELEMENT item (descripcion, precio)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST pedido 
+id ID #REQUIRED>
+<!ATTLIST item 
+        cantidad CDATA #REQUIRED>]>
+
+<!--XML-->
+
+<pedidos>
+    <pedido id="P001">
+        <cliente>
+            <nombre>Laura Martínez</nombre>
+            <email>laura@example.com</email>
+            <telefono>600123456</telefono>
+        </cliente>
+
+        <fecha>2025-11-13</fecha>
+
+        <items>
+            <item cantidad="2">
+                <descripcion>Ratón inalámbrico</descripcion>
+                <precio>19.95</precio>
+            </item>
+            <item cantidad="1">
+                <descripcion>Teclado mecánico</descripcion>
+                <precio>59.90</precio>
+            </item>
+        </items>
+    </pedido>
+</pedidos>

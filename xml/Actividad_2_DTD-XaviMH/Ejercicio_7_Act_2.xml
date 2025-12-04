@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD-->
+<!DOCTYPE archivo_articulos [
+  <!ELEMENT archivo_articulos (articulo*)>
+  <!ELEMENT articulo (encabezado, apartado*, referencias?)>
+  <!ELEMENT encabezado (autor, titulo)>
+  <!ELEMENT autor (#PCDATA)>
+  <!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT apartado (encabezado_ap, cuerpo)>
+  <!ELEMENT encabezado_ap (#PCDATA)>
+  <!ELEMENT cuerpo (#PCDATA)>
+  <!ELEMENT referencias (referencia*)>
+  <!ELEMENT referencia (#PCDATA)>
+]>
+
+<!--XML-->
+<archivo_articulos>
+  <articulo>
+    <encabezado>
+      <autor></autor>
+      <titulo></titulo>
+    </encabezado>
+    <apartado>
+      <encabezado_ap></encabezado_ap>
+      <cuerpo></cuerpo>
+    </apartado>
+    <apartado>
+      <encabezado_ap></encabezado_ap>
+      <cuerpo></cuerpo>
+    </apartado>
+    <referencias>
+      <referencia></referencia>
+      <referencia></referencia>
+    </referencias>
+  </articulo>
+  <articulo>
+    <encabezado>
+      <autor></autor>
+      <titulo></titulo>
+    </encabezado>
+  </articulo>
+</archivo_articulos>

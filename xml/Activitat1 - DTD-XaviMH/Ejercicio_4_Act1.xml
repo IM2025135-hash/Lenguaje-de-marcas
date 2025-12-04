@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DTD-->
+<!DOCTYPE agenda [
+    <!ELEMENT agenda (evento+, personas)>
+    <!ELEMENT evento (titulo, hora, sala, ponentes)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT hora (#PCDATA)>
+    <!ELEMENT sala (#PCDATA)>
+    <!ELEMENT ponentes (ponente+)>
+    <!ELEMENT ponente EMPTY>
+    <!ELEMENT personas (persona+)>
+    <!ELEMENT persona (nombre)>
+    <!ELEMENT nombre (#PCDATA)>
+ 
+    <!ATTLIST evento
+        id ID #REQUIRED
+        tipo (charla | taller | panel) #REQUIRED
+    >
+    <!ATTLIST ponente
+        ref IDREF #REQUIRED
+    >
+    <!ATTLIST persona
+        id ID #REQUIRED
+    >
+]>
+
+<!--XML-->
+<agenda>
+    <evento id="E1" tipo="charla">
+        <titulo>Bienvenida</titulo>
+        <hora>09:00</hora>
+        <sala>Auditorio Principal</sala>
+        <ponentes>
+            <ponente ref="P1"/>
+        </ponentes>
+    </evento>
+
+    <evento id="E2" tipo="taller">
+        <titulo>Introducción a XML</titulo>
+        <hora>10:00</hora>
+        <sala>Sala 1</sala>
+        <ponentes>
+            <ponente ref="P2"/>
+            <ponente ref="P3"/>
+        </ponentes>
+    </evento>
+
+    <personas>
+        <persona id="P1">
+            <nombre>Ana</nombre>
+        </persona>
+        <persona id="P2">
+            <nombre>Juan</nombre>
+        </persona>
+        <persona id="P3">
+            <nombre>María</nombre>
+        </persona>
+    </personas>
+</agenda>

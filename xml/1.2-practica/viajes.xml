@@ -1,0 +1,72 @@
+<agenciaViajes>
+  <datosGenerales>
+    <nombre>Agencia de Viajes Barrio Feliz</nombre>
+    <direccion>Calle Mayor 12, Madrid, España</direccion>
+    <telefono>+34 912345678</telefono>
+  </datosGenerales>
+
+  <destinos>
+    <destino id="d1">
+      <ciudad>Barcelona</ciudad>
+      <pais>España</pais>
+      <tipo>Playa</tipo>
+      <actividades>
+        <actividad>Visita a la Sagrada Familia</actividad>
+        <actividad>Relajarse en la playa de Barceloneta</actividad>
+      </actividades>
+    </destino>
+    <destino id="d2">
+      <ciudad>Chamonix</ciudad>
+      <pais>Francia</pais>
+      <tipo>Montaña</tipo>
+      <actividades>
+        <actividad>Senderismo por el Mont Blanc</actividad>
+        <actividad>Escalada en glaciar</actividad>
+      </actividades>
+    </destino>
+    <destino id="d3">
+      <ciudad>Roma</ciudad>
+      <pais>Italia</pais>
+      <tipo>Cultural</tipo>
+      <actividades>
+        <actividad>Visita al Coliseo</actividad>
+        <actividad>Paseo por la Plaza de España</actividad>
+      </actividades>
+    </destino>
+  </destinos>
+
+  <clientes>
+    <cliente id="c1">
+      <nombre>Ana Fernández</nombre>
+      <email>ana@gmail.com</email>
+      <telefono>789654321</telefono>
+    </cliente>
+    <cliente id="c2">
+      <nombre>Pepito Grillo</nombre>
+      <email>pepito@yahoo.com</email>
+      <telefono>656566555</telefono>
+    </cliente>
+    <cliente id="c3">
+      <nombre>Lucía Martínez</nombre>
+      <email>lucia@hotmail.com</email>
+      <telefono>678123456</telefono>
+    </cliente>
+  </clientes>
+
+  <reservas>
+    <reserva>
+      <cliente>Ana Fernández</cliente>
+      <destino>Barcelona</destino>
+      <fechaInicio>2025-06-10</fechaInicio>
+      <fechaFin>2025-06-15</fechaFin>
+      <personas>2</personas>
+    </reserva>
+    <reserva>
+      <cliente>Pepito Grillo</cliente>
+      <destino>Chamonix</destino>
+      <fechaInicio>2025-07-05</fechaInicio>
+      <fechaFin>2025-07-12</fechaFin>
+      <personas>4</personas>
+    </reserva>
+  </reservas>
+</agenciaViajes>

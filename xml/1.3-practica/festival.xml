@@ -1,0 +1,193 @@
+<festivalCine>
+  <datosGenerales>
+    <nombre>Festival Internacional de Cine de Ejemplo</nombre>
+    <ciudad>Madrid</ciudad>
+    <fechaInicio>2025-11-01</fechaInicio>
+    <fechaFin>2025-11-07</fechaFin>
+    <contacto>
+      <email>contacto@festivalcine.com</email>
+      <telefono>+34 912345678</telefono>
+    </contacto>
+  </datosGenerales>
+
+  <peliculas>
+    <pelicula id="p1">
+      <titulo>El Viaje Infinito</titulo>
+      <director>María López</director>
+      <anio>2024</anio>
+      <pais>España</pais>
+      <idioma>Español</idioma>
+      <actoresPrincipales>
+        <actor>
+          <nombre>Juan Pérez</nombre>
+          <personaje>Alex</personaje>
+        </actor>
+        <actor>
+          <nombre>Laura García</nombre>
+          <personaje>Clara</personaje>
+        </actor>
+      </actoresPrincipales>
+    </pelicula>
+
+    <pelicula id="p2">
+      <titulo>Horizontes Lejanos</titulo>
+      <director>Peter Schmidt</director>
+      <anio>2023</anio>
+      <pais>Alemania</pais>
+      <idioma>Alemán</idioma>
+      <actoresPrincipales>
+        <actor>
+          <nombre>Hans Müller</nombre>
+          <personaje>Friedrich</personaje>
+        </actor>
+        <actor>
+          <nombre>Anna Becker</nombre>
+          <personaje>Sophia</personaje>
+        </actor>
+      </actoresPrincipales>
+    </pelicula>
+
+    <pelicula id="p3">
+      <titulo>Luz en la Oscuridad</titulo>
+      <director>Chloe Martin</director>
+      <anio>2025</anio>
+      <pais>Francia</pais>
+      <idioma>Francés</idioma>
+      <actoresPrincipales>
+        <actor>
+          <nombre>Émile Dupont</nombre>
+          <personaje>Louis</personaje>
+        </actor>
+        <actor>
+          <nombre>Camille Roche</nombre>
+          <personaje>Marie</personaje>
+        </actor>
+      </actoresPrincipales>
+    </pelicula>
+
+    <pelicula id="p4">
+      <titulo>Sombras del Pasado</titulo>
+      <director>David Kim</director>
+      <anio>2024</anio>
+      <pais>Corea del Sur</pais>
+      <idioma>Coreano</idioma>
+      <actoresPrincipales>
+        <actor>
+          <nombre>Min-Jun Lee</nombre>
+          <personaje>Joon</personaje>
+        </actor>
+        <actor>
+          <nombre>Seo-Yeon Park</nombre>
+          <personaje>Hana</personaje>
+        </actor>
+      </actoresPrincipales>
+    </pelicula>
+  </peliculas>
+
+  <salas>
+    <sala id="s1">
+      <nombre>Principal</nombre>
+      <capacidad>200</capacidad>
+      <ubicacion>Edificio Principal</ubicacion>
+    </sala>
+    <sala id="s2">
+      <nombre>Anexa 1</nombre>
+      <capacidad>120</capacidad>
+      <ubicacion>Sala Anexa</ubicacion>
+    </sala>
+    <sala id="s3">
+      <nombre>VIP</nombre>
+      <capacidad>80</capacidad>
+      <ubicacion>Edificio VIP</ubicacion>
+    </sala>
+  </salas>
+
+  <sesiones>
+    <sesion>
+      <fecha>2025-11-01</fecha>
+      <hora>18:00</hora>
+      <sala>s1</sala>
+      <pelicula>p1</pelicula>
+    </sesion>
+    <sesion>
+      <fecha>2025-11-01</fecha>
+      <hora>20:00</hora>
+      <sala>s2</sala>
+      <pelicula>p2</pelicula>
+    </sesion>
+    <sesion>
+      <fecha>2025-11-02</fecha>
+      <hora>17:00</hora>
+      <sala>s3</sala>
+      <pelicula>p3</pelicula>
+    </sesion>
+    <sesion>
+      <fecha>2025-11-03</fecha>
+      <hora>19:00</hora>
+      <sala>s1</sala>
+      <pelicula>p4</pelicula>
+    </sesion>
+    <sesion>
+      <fecha>2025-11-04</fecha>
+      <hora>21:00</hora>
+      <sala>s2</sala>
+      <pelicula>p1</pelicula>
+    </sesion>
+  </sesiones>
+
+  <participantes>
+    <invitados>
+      <invitado>
+        <nombre>Alice Johnson</nombre>
+        <profesion>Directora</profesion>
+        <pais>Estados Unidos</pais>
+      </invitado>
+      <invitado>
+        <nombre>Ravi Kumar</nombre>
+        <profesion>Actor</profesion>
+        <pais>India</pais>
+      </invitado>
+      <invitado>
+        <nombre>Lucía Fernández</nombre>
+        <profesion>Productora</profesion>
+        <pais>España</pais>
+      </invitado>
+    </invitados>
+    <jurados>
+      <jurado>
+        <nombre>Martin Dupont</nombre>
+        <especialidad>Dirección</especialidad>
+        <pais>Francia</pais>
+      </jurado>
+      <jurado>
+        <nombre>Keiko Tanaka</nombre>
+        <especialidad>Guion</especialidad>
+        <pais>Japón</pais>
+      </jurado>
+      <jurado>
+        <nombre>David Smith</nombre>
+        <especialidad>Producción</especialidad>
+        <pais>Reino Unido</pais>
+      </jurado>
+    </jurados>
+  </participantes>
+
+  <premios>
+    <premio>
+      <nombre>Mejor Película</nombre>
+      <descripcion>Premio a la mejor película del festival</descripcion>
+      <ganador>p1</ganador>
+    </premio>
+    <premio>
+      <nombre>Mejor Actor</nombre>
+      <descripcion>Premio al mejor actor</descripcion>
+      <ganador>Juan Pérez</ganador>
+    </premio>
+    <premio>
+      <nombre>Premio del Público</nombre>
+      <descripcion>Premio otorgado por votación del público</descripcion>
+      <ganador>p3</ganador>
+    </premio>
+  </premios>
+
+</festivalCine>
