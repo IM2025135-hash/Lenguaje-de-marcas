@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios>
+  <usuario id="U001">
+    <nombre>Juan García</nombre>
+    <email>juan@example.com</email>
+    <fechaRegistro>2024-01-15</fechaRegistro>
+    <activo>true</activo>
+    <telefono>+34-123456789</telefono>
+    <contacto tipo="personal">Contacto de emergencia</contacto>
+    <contacto tipo="trabajo">Contacto laboral</contacto>
+  </usuario>
+  <usuario id="U002">
+    <nombre>María López</nombre>
+    <email>maria@example.com</email>
+    <fechaRegistro>2024-02-20</fechaRegistro>
+    <activo>true</activo>
+    <telefono>+34-987654321</telefono>
+    <contacto tipo="personal">Familia cercana</contacto>
+  </usuario>
+</usuarios>

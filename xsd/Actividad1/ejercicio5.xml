@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+  <nombre>Catálogo de Libros 2026</nombre>
+  <libro>
+    <titulo>El Quijote</titulo>
+    <autor>Miguel de Cervantes</autor>
+    <isbn>978-8423951208</isbn>
+    <precio>25.50</precio>
+    <paginas>1072</paginas>
+    <fechaPublicacion>1605-01-16</fechaPublicacion>
+    <resumen>La historia de un hidalgo que pierde la razón por leer libros de caballerías.</resumen>
+  </libro>
+  <libro>
+    <titulo>Cien años de soledad</titulo>
+    <autor>Gabriel García Márquez</autor>
+    <isbn>978-8439702931</isbn>
+    <precio>18.95</precio>
+    <paginas>417</paginas>
+    <fechaPublicacion>1967-05-30</fechaPublicacion>
+    <resumen>La saga familiar de los Buendía en el pueblo de Macondo.</resumen>
+  </libro>
+  <libro>
+    <titulo>1984</titulo>
+    <autor>George Orwell</autor>
+    <isbn>978-8429414417</isbn>
+    <precio>16.50</precio>
+    <paginas>328</paginas>
+    <fechaPublicacion>1949-06-08</fechaPublicacion>
+    <resumen>Un futuro distópico bajo el control totalitario del Gran Hermano.</resumen>
+  </libro>
+</catalogo>

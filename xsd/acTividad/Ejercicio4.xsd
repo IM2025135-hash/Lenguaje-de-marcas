@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="ejercicio4.xsd" type="application/xml"
+schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+    <xs:element name="logistica">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="envios">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="envio">
+                                <xs:complexType>
+                                    <xs:sequence>                                                                                        
+                                        <xs:element name="estado">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="activo"/>
+                                                    <xs:enumeration value="proceso"/>
+                                                    <xs:enumeration value="acabado"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="descripcion" type="xs:string"/>
+                                        <xs:element name="historial" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="eventos">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="evento" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>                                                                                                                             
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

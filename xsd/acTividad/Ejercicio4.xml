@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="ejercicio4.xsd" type="application/xml"
+schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<logistica>
+    <envios>
+        <envio>
+            <estado>activo</estado>
+            <descripcion></descripcion>
+            <historial>
+                <eventos>
+                    <evento></evento>
+                </eventos>
+            </historial>
+        </envio>
+    </envios>
+</logistica>

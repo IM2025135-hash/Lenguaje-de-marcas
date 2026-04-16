@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tickets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ticket" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titulo" type="xs:string"/>
+              <xs:element name="estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Abierto"/>
+                    <xs:enumeration value="En Proceso"/>
+                    <xs:enumeration value="En Espera"/>
+                    <xs:enumeration value="Cerrado"/>
+                    <xs:enumeration value="Reabierto"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prioridad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Baja"/>
+                    <xs:enumeration value="Media"/>
+                    <xs:enumeration value="Alta"/>
+                    <xs:enumeration value="Crítica"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" type="xs:string"/>
+              <xs:element name="fechaCreacion" type="xs:date"/>
+              <xs:element name="historial" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cambio" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="usuario" type="xs:string"/>
+                          <xs:element name="tipo" type="xs:string"/>
+                          <xs:element name="comentario" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="fecha" type="xs:date" use="required"/>
+                        <xs:attribute name="hora" type="xs:time" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="ejercicio3.xsd" type="application/xml"
+schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<centro_educativo>
+    <clases>
+        <clase>
+            <alumnos>
+                <alumno>
+                    <nombre></nombre>
+                    <email></email>
+                </alumno>
+            </alumnos>
+        </clase>
+    </clases>
+</centro_educativo>

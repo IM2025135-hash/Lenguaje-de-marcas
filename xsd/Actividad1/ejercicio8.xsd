@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="reserva">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Sección de cliente -->
+        <xs:element name="cliente">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="email" type="xs:string"/>
+              <xs:element name="telefono" type="xs:string"/>
+              <xs:element name="direccion" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <!-- Sección de detalle del pedido -->
+        <xs:element name="detallePedido">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numero" type="xs:string"/>
+              <xs:element name="fecha" type="xs:date"/>
+              <xs:element name="estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Pendiente de pago"/>
+                    <xs:enumeration value="Confirmada"/>
+                    <xs:enumeration value="En preparación"/>
+                    <xs:enumeration value="Enviada"/>
+                    <xs:enumeration value="Entregada"/>
+                    <xs:enumeration value="Cancelada"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipoEnvio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Estándar"/>
+                    <xs:enumeration value="Urgente"/>
+                    <xs:enumeration value="Express"/>
+                    <xs:enumeration value="Recogida en tienda"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="articulo" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="cantidad" type="xs:integer"/>
+                    <xs:element name="precioUnitario" type="xs:decimal"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="subtotal" type="xs:decimal"/>
+              <xs:element name="impuestos" type="xs:decimal"/>
+              <xs:element name="total" type="xs:decimal"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <!-- Sección de forma de pago (choice) -->
+        <xs:element name="formaPago">
+          <xs:complexType>
+            <xs:choice>
+              <xs:element name="tarjeta">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tipo" type="xs:string"/>
+                    <xs:element name="numeroTarjeta" type="xs:string"/>
+                    <xs:element name="fechaExpiracion" type="xs:string"/>
+                    <xs:element name="titular" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="transferencia">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="banco" type="xs:string"/>
+                    <xs:element name="iban" type="xs:string"/>
+                    <xs:element name="referencia" type="xs:string"/>
+                    <xs:element name="titular" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="proyectos.xsd">
+    <proyecto id="P001">
+        <nombre>Desarrollo Web</nombre>
+        <fechaInicio>2024-01-15</fechaInicio>
+        <estado>en curso</estado>
+        <empleados>
+            <empleado id="E01">
+                <nombre>Ana Pérez</nombre>
+                <rol>desarrollador</rol>
+            </empleado>
+            <empleado id="E02">
+                <nombre>Carlos Ruiz</nombre>
+                <rol>analista</rol>
+            </empleado>
+        </empleados>
+        <tareas>
+            <tarea id="T01">
+                <descripcion>Crear interfaz de usuario</descripcion>
+                <prioridad>alta</prioridad>
+                <estado>pendiente</estado>
+                <asignados>
+                    <empleadoRef id="E01"/>
+                </asignados>
+            </tarea>
+            <tarea id="T02">
+                <descripcion>Diseñar base de datos</descripcion>
+                <prioridad>media</prioridad>
+                <estado>en curso</estado>
+                <asignados>
+                    <empleadoRef id="E02"/>
+                </asignados>
+                <comentarios>
+                    <comentario>
+                        <texto>Falta definir índices</texto>
+                        <fecha>2024-02-10</fecha>
+                    </comentario>
+                </comentarios>
+            </tarea>
+        </tareas>
+    </proyecto>
+
+    <proyecto id="P002">
+        <nombre>Migración Cloud</nombre>
+        <fechaInicio>2024-03-01</fechaInicio>
+        <estado>planificado</estado>
+        <empleados>
+            <empleado id="E03">
+                <nombre>Lucía Gómez</nombre>
+                <rol>jefe de proyecto</rol>
+            </empleado>
+            <empleado id="E04">
+                <nombre>Manuel Díaz</nombre>
+                <rol>desarrollador</rol>
+            </empleado>
+        </empleados>
+        <tareas>
+            <tarea id="T10">
+                <descripcion>Evaluar proveedores</descripcion>
+                <prioridad>alta</prioridad>
+                <estado>pendiente</estado>
+                <asignados>
+                    <empleadoRef id="E03"/>
+                    <empleadoRef id="E04"/>
+                </asignados>
+            </tarea>
+        </tareas>
+    </proyecto>
+</empresa>

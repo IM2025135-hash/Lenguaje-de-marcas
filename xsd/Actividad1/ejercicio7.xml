@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket id="TK-001">
+    <titulo>Error en login</titulo>
+    <estado>Abierto</estado>
+    <prioridad>Alta</prioridad>
+    <descripcion>Los usuarios no pueden iniciar sesión con sus credenciales. Sistema devuelve error 500.</descripcion>
+    <fechaCreacion>2026-03-10</fechaCreacion>
+    <historial>
+      <cambio fecha="2026-03-10" hora="10:30:00">
+        <usuario>admin</usuario>
+        <tipo>Estado</tipo>
+        <comentario>Ticket creado. Investigacion iniciada.</comentario>
+      </cambio>
+      <cambio fecha="2026-03-11" hora="09:15:00">
+        <usuario>soporte1</usuario>
+        <tipo>Cambio de prioridad</tipo>
+        <comentario>Escalado a Alta prioridad. Afecta a múltiples usuarios.</comentario>
+      </cambio>
+    </historial>
+  </ticket>
+  <ticket id="TK-002">
+    <titulo>Solicitud de nueva funcionalidad</titulo>
+    <estado>En Proceso</estado>
+    <prioridad>Media</prioridad>
+    <descripcion>Agregar opción de exportar reportes en formato PDF.</descripcion>
+    <fechaCreacion>2026-02-28</fechaCreacion>
+    <historial>
+      <cambio fecha="2026-02-28" hora="14:00:00">
+        <usuario>cliente1</usuario>
+        <tipo>Apertura</tipo>
+        <comentario>Se solicita nueva funcionalidad.</comentario>
+      </cambio>
+    </historial>
+  </ticket>
+</tickets>

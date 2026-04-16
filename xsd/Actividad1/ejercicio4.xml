@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clase>
+  <nombre>4ºESO-A</nombre>
+  <alumno>
+    <id>001</id>
+    <nombre>Juan</nombre>
+    <edad>15</edad>
+    <email>juan@school.es</email>
+  </alumno>
+  <alumno>
+    <id>002</id>
+    <nombre>María</nombre>
+    <edad>15</edad>
+    <email>maria@school.es</email>
+  </alumno>
+  <alumno>
+    <id>003</id>
+    <nombre>Carlos</nombre>
+    <edad>16</edad>
+    <email>carlos@school.es</email>
+  </alumno>
+</clase>

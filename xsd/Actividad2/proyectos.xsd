@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Enumerations -->
+    <xs:simpleType name="estadoProyectoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="en curso"/>
+            
+        
+            <xs:enumeration value="planificado"/>
+            <xs:enumeration value="completado"/>
+            <xs:enumeration value="cancelado"/>             
+        </xs:restriction>
+        
+    </xs:simpleType>
+
+    <xs:simpleType name="prioridadType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="alta"/>
+            <xs:enumeration value="media"/>
+            <xs:enumeration value="baja"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="estadoTareaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pendiente"/>
+            <xs:enumeration value="en curso"/>
+            <xs:enumeration value="completada"/>
+            <xs:enumeration value="cancelada"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Root element -->
+    <xs:element name="empresa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="proyecto" type="proyectoType" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Proyecto -->
+    <xs:complexType name="proyectoType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="fechaInicio" type="xs:date"/>
+            <xs:element name="estado" type="estadoProyectoType"/>
+            <xs:element name="empleados" type="empleadosType"/>
+            <xs:element name="tareas" type="tareasType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- Empleados container -->
+    <xs:complexType name="empleadosType">
+        <xs:sequence>
+            <xs:element name="empleado" type="empleadoType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="empleadoType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="rol" type="rolType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- Tareas container -->
+    <xs:complexType name="tareasType">
+        <xs:sequence>
+            <xs:element name="tarea" type="tareaType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tareaType">
+        <xs:sequence>
+            <xs:element name="descripcion" type="xs:string"/>
+            <xs:element name="prioridad" type="prioridadType"/>
+            <xs:element name="estado" type="estadoTareaType"/>
+            <xs:element name="asignados" type="asignadosType" minOccurs="0"/>
+            <xs:element name="comentarios" type="comentariosType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="asignadosType">
+        <xs:sequence>
+            <xs:element name="empleadoRef" type="empleadoRefType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="empleadoRefType">
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="comentariosType">
+        <xs:sequence>
+            <xs:element name="comentario" type="comentarioType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="comentarioType">
+        <xs:sequence>
+            <xs:element name="autor" type="xs:string"/>
+            <xs:element name="fecha" type="xs:dateTime"/>
+            <xs:element name="contenido" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+
+

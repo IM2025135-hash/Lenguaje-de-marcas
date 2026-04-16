@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reserva>
+  <cliente>
+    <nombre>Juan García López</nombre>
+    <email>juan@example.com</email>
+    <telefono>+34-123456789</telefono>
+    <direccion>Calle Principal 42, 28001 Madrid</direccion>
+  </cliente>
+  <detallePedido>
+    <numero>PED-2026-001</numero>
+    <fecha>2026-03-11</fecha>
+    <estado>Pendiente de pago</estado>
+    <tipoEnvio>Estándar</tipoEnvio>
+    <articulo>
+      <nombre>Laptop Dell XPS 13</nombre>
+      <cantidad>1</cantidad>
+      <precioUnitario>999.99</precioUnitario>
+    </articulo>
+    <articulo>
+      <nombre>Mouse inalámbrico</nombre>
+      <cantidad>2</cantidad>
+      <precioUnitario>25.50</precioUnitario>
+    </articulo>
+    <subtotal>1050.99</subtotal>
+    <impuestos>219.71</impuestos>
+    <total>1270.70</total>
+  </detallePedido>
+  <formaPago>
+    <tarjeta>
+      <tipo>Visa</tipo>
+      <numeroTarjeta>4111111111111111</numeroTarjeta>
+      <fechaExpiracion>12/26</fechaExpiracion>
+      <titular>Juan García López</titular>
+    </tarjeta>
+  </formaPago>
+</reserva>

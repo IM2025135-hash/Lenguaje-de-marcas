@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reserva>
+  <cliente>
+    <nombre>María Rodríguez Pérez</nombre>
+    <email>maria@example.com</email>
+    <telefono>+34-987654321</telefono>
+    <direccion>Avenida Secundaria 15, 08002 Barcelona</direccion>
+  </cliente>
+  <detallePedido>
+    <numero>PED-2026-002</numero>
+    <fecha>2026-03-11</fecha>
+    <estado>Confirmada</estado>
+    <tipoEnvio>Urgente</tipoEnvio>
+    <articulo>
+      <nombre>Monitor 4K LG</nombre>
+      <cantidad>1</cantidad>
+      <precioUnitario>499.99</precioUnitario>
+    </articulo>
+    <subtotal>499.99</subtotal>
+    <impuestos>104.80</impuestos>
+    <total>604.79</total>
+  </detallePedido>
+  <formaPago>
+    <transferencia>
+      <banco>Banco Nacional de España</banco>
+      <iban>ES9121000418450200051332</iban>
+      <referencia>PED-2026-002</referencia>
+      <titular>María Rodríguez Pérez</titular>
+    </transferencia>
+  </formaPago>
+</reserva>

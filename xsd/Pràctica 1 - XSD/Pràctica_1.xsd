@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Comentario actualizado -->
+
+    <!-- Comentario actualizado -->
+
+    <!-- Comentario actualizado -->
+    <xs:simpleType name="SituacionType">
+
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Reservado"/>
+            <xs:enumeration value="Entregado"/>
+            <xs:enumeration value="Cerrado"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Comentario actualizado -->
+    <xs:simpleType name="TipoPrecioType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="unidad"/>
+            <xs:enumeration value="dia"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Comentario actualizado -->
+    <xs:simpleType name="TipoClienteType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="empresa"/>
+            <xs:enumeration value="particular"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Comentario actualizado -->
+    <xs:simpleType name="TipoEntregaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="recogida"/>
+            <xs:enumeration value="transporte"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Comentario actualizado -->
+    <xs:simpleType name="GravedadType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Baja"/>
+            <xs:enumeration value="Media"/>
+            <xs:enumeration value="Alta"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Comentario actualizado -->
+    <xs:element name="ExpedientesAlquiler">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Expediente" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Comentario actualizado -->
+                            <xs:element name="Cliente">
+                                <xs:complexType>
+                                    <xs:choice>
+                                        <xs:sequence>
+                                            <xs:element name="Nombre" type="xs:string"/>
+                                            <xs:element name="CIF" type="xs:string"/>
+                                        </xs:sequence>
+                                        <xs:sequence>
+                                            <xs:element name="Nombre" type="xs:string"/>
+                                            <xs:element name="DNI" type="xs:string"/>
+                                        </xs:sequence>
+                                    </xs:choice>
+                                    <xs:attribute name="tipo" type="TipoClienteType" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- Comentario actualizado -->
+                            <xs:element name="Evento">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Nombre" type="xs:string"/>
+                                        <xs:element name="Fecha" type="xs:date"/>
+                                        <xs:element name="Localidad" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- Comentario actualizado -->
+                            <xs:element name="Tecnicos" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Tecnico" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Nombre" type="xs:string"/>
+                                                    <xs:element name="Especialidad" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- Comentario actualizado -->
+                            <xs:element name="Materiales">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!-- Comentario actualizado -->
+                                        <xs:element name="Material" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Codigo" type="xs:string"/>
+                                                    <xs:element name="Categoria" type="xs:string"/>
+                                                    <xs:element name="Descripcion" type="xs:string"/>
+                                                    <xs:element name="Cantidad" type="xs:int"/>
+                                                    <xs:element name="Precio">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:decimal">
+                                                                    <xs:attribute name="tipo" type="TipoPrecioType" use="required"/>
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Seguro" type="xs:boolean" minOccurs="0"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- Comentario actualizado -->
+                            <xs:element name="Entrega">
+                                <xs:complexType>
+                                    <xs:choice>
+                                        <xs:element name="Direccion" type="xs:string" minOccurs="0"/>
+                                    </xs:choice>
+                                    <xs:attribute name="tipo" type="TipoEntregaType" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- Comentario actualizado -->
+                            <xs:element name="Devolucion" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Fecha" type="xs:date"/>
+                                        <xs:element name="Incidencias" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Incidencia" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Descripcion" type="xs:string"/>
+                                                                <xs:element name="FechaRegistro" type="xs:date"/>
+                                                                <xs:element name="Gravedad" type="GravedadType"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!-- Comentario actualizado -->
+                        <xs:attribute name="referencia" type="xs:string" use="required"/>
+                        <xs:attribute name="fechaCreacion" type="xs:date" use="required"/>
+                        <xs:attribute name="situacion" type="SituacionType" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

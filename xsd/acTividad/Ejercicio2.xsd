@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="ejercicio2.xsd" type="application/xml"
+schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+<xs:element name="pedido">  
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="cliente" type="xs:string"/>
+            <xs:element name="fecha" type="xs:date"/>
+            <xs:element name="total" type="xs:decimal"/>
+
+            <xs:element name="lienas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="linea">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="producto" type="xs:string"/>
+                                    <xs:element name="unidades" type="xs:integer"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

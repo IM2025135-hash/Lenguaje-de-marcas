@@ -1,69 +1,700 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mi primera página</title>
-    <link rel="stylesheet" href="style.css"> <!-- Vinculamos el CSS -->
+!DOCTYPE html
+html lang=es
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titleXML & XSD — Ejerciciostitle
+link href=httpsfonts.googleapis.comcss2family=JetBrains+Monowght@300;400;500;600&family=Synewght@400;600;700;800&display=swap rel=stylesheet
+style
+  root {
+    --bg #0a0a0f;
+    --surface #111118;
+    --card #16161f;
+    --border #2a2a3a;
+    --accent #7c6af7;
+    --accent2 #f76a8f;
+    --accent3 #6af7c8;
+    --text #e8e8f0;
+    --muted #6b6b85;
+    --code-bg #0d0d14;
+  }
 
-</head>
-<body>
+   { margin 0; padding 0; box-sizing border-box; }
 
-    <nav>
-        <ul>
-          <li><a href="#Inicio">Inicio</a></li>
-          <li><a href="#Sobre mi">Sobre mi</a></li>
-          <li><a href="#Contacto">Contacto</a></li>
-        
+  body {
+    background var(--bg);
+    color var(--text);
+    font-family 'Syne', sans-serif;
+    min-height 100vh;
+    overflow-x hidden;
+  }
 
+  .noise {
+    position fixed; inset 0; pointer-events none; z-index 0;
+    background-image url(dataimagesvg+xml,%3Csvg viewBox='0 0 256 256' xmlns='httpwww.w3.org2000svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'%3E%3Cfilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'%3E%3Csvg%3E);
+    opacity 0.4;
+  }
 
+  .grid-bg {
+    position fixed; inset 0; pointer-events none; z-index 0;
+    background-image linear-gradient(var(--border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size 40px 40px;
+    opacity 0.3;
+  }
 
+  .glow {
+    position fixed; top -200px; left 50%; transform translateX(-50%);
+    width 800px; height 400px;
+    background radial-gradient(ellipse, rgba(124,106,247,0.12) 0%, transparent 70%);
+    pointer-events none; z-index 0;
+  }
 
-    </nav>
+  .container {
+    position relative; z-index 1;
+    max-width 1100px; margin 0 auto; padding 60px 24px 80px;
+  }
 
-    <section id="Inicio">
-         <h1>¡Hola mundo!</h1>
-            <p>Esta es mi primera página con HTML y CSS.</p>
-    
-     <h2>Lista de cosas que me gustan:</h2>
-     <ul>
-        <li>Programar</li>
-        <li>Escuchar música</li>
+  header {
+    text-align center; margin-bottom 72px;
+    animation fadeUp 0.8s ease both;
+  }
 
+  .badge {
+    display inline-block;
+    border 1px solid var(--accent);
+    color var(--accent);
+    font-family 'JetBrains Mono', monospace;
+    font-size 11px; letter-spacing 0.15em;
+    padding 4px 14px; border-radius 2px;
+    margin-bottom 20px;
+    text-transform uppercase;
+  }
 
-        <li>Deporte</li>
-     </ul>
+  h1 {
+    font-size clamp(2.4rem, 5vw, 4rem);
+    font-weight 800; letter-spacing -0.03em; line-height 1.05;
+    background linear-gradient(135deg, #fff 30%, var(--accent) 70%);
+    -webkit-background-clip text; -webkit-text-fill-color transparent;
+    margin-bottom 14px;
+  }
 
-     <p class="destacado">Este párrafo tiene un estilo especial.</p>
+  .subtitle {
+    color var(--muted); font-size 1rem; font-family 'JetBrains Mono', monospace;
+  }
 
-     <img src="porsche-911-gt3-touring-3.webp" alt="coche">
-    </section>
-<section id="Contacto">
-        <h1>Contáctanos</h1>
-        <p>¿Tienes alguna consulta, comentario o propuesta? Envíanos un mensaje y te responderemos lo antes posible.</p>
+  .exercises-grid {
+    display flex; flex-direction column; gap 40px;
+  }
 
-         <h2>Información de contacto</h2>
-    <ul>
-      <li><strong>Correo:</strong> <a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a></li>
-      <li><strong>Teléfono:</strong> <a href="tel:+34600123456">+34 600 123 456</a></li>
-      <li><strong>Dirección:</strong> Calle Ejemplo 123, Madrid, España</li>
-    </ul>
+  .exercise-card {
+    background var(--card);
+    border 1px solid var(--border);
+    border-radius 4px;
+    overflow hidden;
+    animation fadeUp 0.6s ease both;
+    transition border-color 0.3s;
+  }
 
+  .exercise-cardhover { border-color var(--accent); }
 
+  .card-header {
+    display flex; align-items center; gap 16px;
+    padding 20px 28px; border-bottom 1px solid var(--border);
+    background rgba(124,106,247,0.04);
+  }
 
+  .ex-num {
+    font-family 'JetBrains Mono', monospace;
+    font-size 11px; font-weight 600;
+    color var(--accent); letter-spacing 0.1em;
+    background rgba(124,106,247,0.1);
+    border 1px solid rgba(124,106,247,0.3);
+    padding 3px 10px; border-radius 2px;
+    white-space nowrap;
+  }
 
-</section>
+  .card-title {
+    font-size 1rem; font-weight 700; letter-spacing -0.01em;
+  }
 
-<section id="Sobre mi">
-<h2>Sobre mi</h2>
-<p>
+  .card-body {
+    display grid; grid-template-columns 1fr 1fr; gap 0;
+  }
 
-Soy una persona apasionada por el aprendizaje continuo y la creatividad. Me gusta enfrentar nuevos retos, trabajar en equipo y encontrar soluciones innovadoras a los problemas. Tengo experiencia en [tu área: diseño, programación, marketing, etc.] y disfruto compartir mis conocimientos para ayudar a otros a crecer.
+  @media (max-width 700px) {
+    .card-body { grid-template-columns 1fr; }
+  }
 
-En mi tiempo libre me dedico a [tus hobbies: leer, viajar, hacer deporte, aprender idiomas, etc.], lo que me permite mantener un equilibrio entre lo personal y lo profesional. Mi objetivo es seguir desarrollándome, aportar valor en cada proyecto y dejar una huella positiva en las personas con las que colaboro.</p>
+  .code-section {
+    padding 0;
+    border-right 1px solid var(--border);
+  }
 
+  .code-sectionlast-child { border-right none; }
 
+  .code-label {
+    font-family 'JetBrains Mono', monospace;
+    font-size 10px; letter-spacing 0.15em; text-transform uppercase;
+    padding 10px 18px;
+    color var(--muted);
+    border-bottom 1px solid var(--border);
+    display flex; align-items center; gap 8px;
+  }
 
-</section>
-</body>
-</html>
+  .code-label .dot {
+    width 6px; height 6px; border-radius 50%;
+  }
 
+  .dot-xml { background var(--accent3); }
+  .dot-xsd { background var(--accent2); }
+
+  pre {
+    font-family 'JetBrains Mono', monospace;
+    font-size 12px; line-height 1.75;
+    padding 18px; overflow-x auto;
+    background var(--code-bg);
+    height 100%;
+    color #c9c9e0;
+  }
+
+   Syntax highlighting via spans 
+  .tag { color #7c6af7; }
+  .attr { color #f76a8f; }
+  .val { color #6af7c8; }
+  .com { color #4a4a65; font-style italic; }
+  .type { color #f7c46a; }
+  .kw { color #f76a8f; }
+
+  .full-width .card-body {
+    grid-template-columns 1fr;
+  }
+
+  .full-width .code-section {
+    border-right none;
+  }
+
+  @keyframes fadeUp {
+    from { opacity 0; transform translateY(20px); }
+    to   { opacity 1; transform translateY(0); }
+  }
+style
+head
+body
+
+div class=noisediv
+div class=grid-bgdiv
+div class=glowdiv
+
+div class=container
+  header
+    div class=badgePráctica — XML &amp; XSDdiv
+    h1Esquemas XMLh1
+    p class=subtitle 8 ejercicios · validación con XSDp
+  header
+
+  div class=exercises-grid
+
+    !-- EJ 1 --
+    div class=exercise-card style=animation-delay0.05s
+      div class=card-header
+        span class=ex-numEJ 01span
+        span class=card-titlePersona con nombrespan
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;persona&gt;span
+  span class=tag&lt;nombre&gt;spanAnaspan class=tag&lt;nombre&gt;span
+span class=tag&lt;persona&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valpersonaspanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valnombrespan
+                    span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+    !-- EJ 2 --
+    div class=exercise-card style=animation-delay0.1s
+      div class=card-header
+        span class=ex-numEJ 02span
+        span class=card-titleProducto con tipos correctos y ordenspan
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;producto&gt;span
+  span class=tag&lt;nombre&gt;spanTecladospan class=tag&lt;nombre&gt;span
+  span class=tag&lt;precio&gt;span19.95span class=tag&lt;precio&gt;span
+  span class=tag&lt;stock&gt;span10span class=tag&lt;stock&gt;span
+span class=tag&lt;producto&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valproductospanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valnombrespan
+                    span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valpreciospan
+                    span class=attrtypespan=span class=valxsdecimalspanspan class=tag&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valstockspan
+                    span class=attrtypespan=span class=valxsintegerspanspan class=tag&gt;span
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+    !-- EJ 3 --
+    div class=exercise-card style=animation-delay0.15s
+      div class=card-header
+        span class=ex-numEJ 03span
+        span class=card-titlePedido con líneas anidadasspan
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;pedido&gt;span
+  span class=tag&lt;cliente&gt;spanPepespan class=tag&lt;cliente&gt;span
+  span class=tag&lt;fecha&gt;span2026-02-05span class=tag&lt;fecha&gt;span
+  span class=tag&lt;total&gt;span19.95span class=tag&lt;total&gt;span
+  span class=tag&lt;lineas&gt;span
+    span class=tag&lt;linea&gt;span
+      span class=tag&lt;producto&gt;spanTecladospan class=tag&lt;producto&gt;span
+      span class=tag&lt;unidades&gt;span2span class=tag&lt;unidades&gt;span
+    span class=tag&lt;linea&gt;span
+  span class=tag&lt;lineas&gt;span
+span class=tag&lt;pedido&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valpedidospanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valclientespan  span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valfechaspan    span class=attrtypespan=span class=valxsdatespanspan class=tag&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valtotalspan    span class=attrtypespan=span class=valxsdecimalspanspan class=tag&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=vallineasspanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xssequence&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=vallineaspan
+                          span class=attrmaxOccursspan=span class=valunboundedspanspan class=tag&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valproductospan
+                                span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valunidadesspan
+                                span class=attrtypespan=span class=valxspositiveIntegerspanspan class=tag&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+              span class=tag&lt;xselement&gt;span
+            span class=tag&lt;xssequence&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+    !-- EJ 4 --
+    div class=exercise-card style=animation-delay0.2s
+      div class=card-header
+        span class=ex-numEJ 04span
+        span class=card-titleClase con alumnos repetibles (1..N)span
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;clase&gt;span
+  span class=tag&lt;alumno&gt;span
+    span class=tag&lt;dni&gt;span12345678Aspan class=tag&lt;dni&gt;span
+    span class=tag&lt;nombre&gt;spanMaría Lópezspan class=tag&lt;nombre&gt;span
+    span class=tag&lt;nota&gt;span8.5span class=tag&lt;nota&gt;span
+  span class=tag&lt;alumno&gt;span
+  span class=tag&lt;alumno&gt;span
+    span class=tag&lt;dni&gt;span87654321Bspan class=tag&lt;dni&gt;span
+    span class=tag&lt;nombre&gt;spanCarlos Ruizspan class=tag&lt;nombre&gt;span
+    span class=tag&lt;nota&gt;span7.0span class=tag&lt;nota&gt;span
+  span class=tag&lt;alumno&gt;span
+span class=tag&lt;clase&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valclasespanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valalumnospan
+                    span class=attrminOccursspan=span class=val1span
+                    span class=attrmaxOccursspan=span class=valunboundedspanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xssequence&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valdnispan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valnombrespan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valnotaspan
+                          span class=attrtypespan=span class=valxsdecimalspanspan class=tag&gt;span
+            span class=tag&lt;xssequence&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+    !-- EJ 5 --
+    div class=exercise-card style=animation-delay0.25s
+      div class=card-header
+        span class=ex-numEJ 05span
+        span class=card-titleCatálogo de libros — campos obligatorios y opcionalesspan
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;catalogo&gt;span
+  span class=tag&lt;libro&gt;span
+    span class=tag&lt;titulo&gt;spanDunespan class=tag&lt;titulo&gt;span
+    span class=tag&lt;autor&gt;spanFrank Herbertspan class=tag&lt;autor&gt;span
+    span class=tag&lt;precio&gt;span12.99span class=tag&lt;precio&gt;span
+    span class=tag&lt;fecha_pub&gt;span1965-08-01span class=tag&lt;fecha_pub&gt;span
+    span class=tag&lt;paginas&gt;span688span class=tag&lt;paginas&gt;span
+  span class=tag&lt;libro&gt;span
+  span class=tag&lt;libro&gt;span
+    span class=tag&lt;titulo&gt;spanFundaciónspan class=tag&lt;titulo&gt;span
+    span class=tag&lt;autor&gt;spanIsaac Asimovspan class=tag&lt;autor&gt;span
+    span class=tag&lt;precio&gt;span9.95span class=tag&lt;precio&gt;span
+    span class=tag&lt;fecha_pub&gt;span1951-05-01span class=tag&lt;fecha_pub&gt;span
+    span class=com&lt;!-- paginas es opcional --&gt;span
+  span class=tag&lt;libro&gt;span
+span class=tag&lt;catalogo&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valcatalogospanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=vallibrospan
+                    span class=attrminOccursspan=span class=val1span
+                    span class=attrmaxOccursspan=span class=valunboundedspanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xssequence&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valtitulospan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valautorspan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valpreciospan
+                          span class=attrtypespan=span class=valxsdecimalspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valfecha_pubspan
+                          span class=attrtypespan=span class=valxsdatespanspan class=tag&gt;span
+              span class=com&lt;!-- opcional minOccurs=0 --&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valpaginasspan
+                          span class=attrtypespan=span class=valxspositiveIntegerspan
+                          span class=attrminOccursspan=span class=val0spanspan class=tag&gt;span
+            span class=tag&lt;xssequence&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+    !-- EJ 6 --
+    div class=exercise-card style=animation-delay0.3s
+      div class=card-header
+        span class=ex-numEJ 06span
+        span class=card-titleUsuarios con atributo obligatorio idspan
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;usuarios&gt;span
+  span class=tag&lt;usuariospan span class=attridspan=span class=valU001spanspan class=tag&gt;span
+    span class=tag&lt;nombre&gt;spanLaura Garcíaspan class=tag&lt;nombre&gt;span
+    span class=tag&lt;email&gt;spanlaura@mail.comspan class=tag&lt;email&gt;span
+    span class=tag&lt;activo&gt;spantruespan class=tag&lt;activo&gt;span
+  span class=tag&lt;usuario&gt;span
+  span class=tag&lt;usuariospan span class=attridspan=span class=valU002spanspan class=tag&gt;span
+    span class=tag&lt;nombre&gt;spanPedro Sanzspan class=tag&lt;nombre&gt;span
+    span class=tag&lt;email&gt;spanpedro@mail.comspan class=tag&lt;email&gt;span
+    span class=tag&lt;activo&gt;spanfalsespan class=tag&lt;activo&gt;span
+  span class=tag&lt;usuario&gt;span
+span class=tag&lt;usuarios&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valusuariosspanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valusuariospan
+                    span class=attrminOccursspan=span class=val1span
+                    span class=attrmaxOccursspan=span class=valunboundedspanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xssequence&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valnombrespan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valemailspan
+                          span class=attrtypespan=span class=valxsstringspan
+                          span class=attrmaxOccursspan=span class=val1spanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valactivospan
+                          span class=attrtypespan=span class=valxsbooleanspanspan class=tag&gt;span
+            span class=tag&lt;xssequence&gt;span
+            span class=com&lt;!-- atributo id obligatorio --&gt;span
+            span class=tag&lt;xsattributespan span class=attrnamespan=span class=validspan
+                          span class=attrtypespan=span class=valxsstringspan
+                          span class=attrusespan=span class=valrequiredspanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+    !-- EJ 7 --
+    div class=exercise-card style=animation-delay0.35s
+      div class=card-header
+        span class=ex-numEJ 07span
+        span class=card-titleTickets con estado (enumeration) e historialspan
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;tickets&gt;span
+  span class=tag&lt;ticketspan span class=attridspan=span class=valT001spanspan class=tag&gt;span
+    span class=tag&lt;estado&gt;spanabiertospan class=tag&lt;estado&gt;span
+    span class=tag&lt;prioridad&gt;spanaltaspan class=tag&lt;prioridad&gt;span
+    span class=tag&lt;descripcion&gt;span
+      El servidor no responde
+    span class=tag&lt;descripcion&gt;span
+    span class=tag&lt;historial&gt;span
+      span class=tag&lt;comentario&gt;span
+        Revisando logsspan class=tag&lt;comentario&gt;span
+      span class=tag&lt;comentario&gt;span
+        Escalado a nivel 2span class=tag&lt;comentario&gt;span
+    span class=tag&lt;historial&gt;span
+  span class=tag&lt;ticket&gt;span
+span class=tag&lt;tickets&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xssimpleTypespan span class=attrnamespan=span class=valtipoEstadospanspan class=tag&gt;span
+    span class=tag&lt;xsrestrictionspan span class=attrbasespan=span class=valxsstringspanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valabiertospanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valen_procesospanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valcerradospanspan class=tag&gt;span
+    span class=tag&lt;xsrestriction&gt;span
+  span class=tag&lt;xssimpleType&gt;span
+
+  span class=tag&lt;xssimpleTypespan span class=attrnamespan=span class=valtipoPrioridadspanspan class=tag&gt;span
+    span class=tag&lt;xsrestrictionspan span class=attrbasespan=span class=valxsstringspanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valbajaspanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valmediaspanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valaltaspanspan class=tag&gt;span
+    span class=tag&lt;xsrestriction&gt;span
+  span class=tag&lt;xssimpleType&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valticketsspanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valticketspan
+                    span class=attrminOccursspan=span class=val1span
+                    span class=attrmaxOccursspan=span class=valunboundedspanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xssequence&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valestadospan
+                          span class=attrtypespan=span class=valtipoEstadospanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valprioridadspan
+                          span class=attrtypespan=span class=valtipoPrioridadspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valdescripcionspan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valhistorialspan
+                          span class=attrminOccursspan=span class=val0spanspan class=tag&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valcomentariospan
+                                span class=attrtypespan=span class=valxsstringspan
+                                span class=attrminOccursspan=span class=val1span
+                                span class=attrmaxOccursspan=span class=valunboundedspanspan class=tag&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+              span class=tag&lt;xselement&gt;span
+            span class=tag&lt;xssequence&gt;span
+            span class=tag&lt;xsattributespan span class=attrnamespan=span class=validspan
+                          span class=attrtypespan=span class=valxsstringspan
+                          span class=attrusespan=span class=valrequiredspanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+    !-- EJ 8 --
+    div class=exercise-card style=animation-delay0.4s
+      div class=card-header
+        span class=ex-numEJ 08span
+        span class=card-titleProceso de pago con xschoice para forma de pagospan
+      div
+      div class=card-body
+        div class=code-section
+          div class=code-labelspan class=dot dot-xmlspanXMLdiv
+          prespan class=tag&lt;reserva&gt;span
+  span class=tag&lt;estado&gt;spanconfirmadaspan class=tag&lt;estado&gt;span
+  span class=tag&lt;cliente&gt;span
+    span class=tag&lt;nombre&gt;spanAna Torresspan class=tag&lt;nombre&gt;span
+    span class=tag&lt;email&gt;spanana@mail.comspan class=tag&lt;email&gt;span
+  span class=tag&lt;cliente&gt;span
+  span class=tag&lt;detalle&gt;span
+    span class=tag&lt;item&gt;span
+      span class=tag&lt;descripcion&gt;spanHabitación doblespan class=tag&lt;descripcion&gt;span
+      span class=tag&lt;cantidad&gt;span1span class=tag&lt;cantidad&gt;span
+      span class=tag&lt;precio_unit&gt;span95.00span class=tag&lt;precio_unit&gt;span
+    span class=tag&lt;item&gt;span
+  span class=tag&lt;detalle&gt;span
+  span class=tag&lt;forma_pago&gt;span
+    span class=tag&lt;tarjeta&gt;span
+      span class=tag&lt;numero&gt;span   1234span class=tag&lt;numero&gt;span
+      span class=tag&lt;titular&gt;spanAna Torresspan class=tag&lt;titular&gt;span
+    span class=tag&lt;tarjeta&gt;span
+  span class=tag&lt;forma_pago&gt;span
+span class=tag&lt;reserva&gt;spanpre
+        div
+        div class=code-section
+          div class=code-labelspan class=dot dot-xsdspanXSDdiv
+          prespan class=tag&lt;xsschemaspan span class=attrxmlnsxsspan=span class=valhttpwww.w3.org2001XMLSchemaspanspan class=tag&gt;span
+
+  span class=tag&lt;xssimpleTypespan span class=attrnamespan=span class=valtipoEstadospanspan class=tag&gt;span
+    span class=tag&lt;xsrestrictionspan span class=attrbasespan=span class=valxsstringspanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valpendientespanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valconfirmadaspanspan class=tag&gt;span
+      span class=tag&lt;xsenumerationspan span class=attrvaluespan=span class=valcanceladaspanspan class=tag&gt;span
+    span class=tag&lt;xsrestriction&gt;span
+  span class=tag&lt;xssimpleType&gt;span
+
+  span class=tag&lt;xselementspan span class=attrnamespan=span class=valreservaspanspan class=tag&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+      span class=tag&lt;xssequence&gt;span
+
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valestadospan
+                    span class=attrtypespan=span class=valtipoEstadospanspan class=tag&gt;span
+
+        span class=com&lt;!-- sección cliente --&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valclientespanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xssequence&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valnombrespan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valemailspan
+                          span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+            span class=tag&lt;xssequence&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+
+        span class=com&lt;!-- detalle del pedido --&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valdetallespanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xssequence&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valitemspan
+                          span class=attrminOccursspan=span class=val1span
+                          span class=attrmaxOccursspan=span class=valunboundedspanspan class=tag&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valdescripcionspan
+                                span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valcantidadspan
+                                span class=attrtypespan=span class=valxspositiveIntegerspanspan class=tag&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valprecio_unitspan
+                                span class=attrtypespan=span class=valxsdecimalspanspan class=tag&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+              span class=tag&lt;xselement&gt;span
+            span class=tag&lt;xssequence&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+
+        span class=com&lt;!-- forma de pago choice excluyente --&gt;span
+        span class=tag&lt;xselementspan span class=attrnamespan=span class=valforma_pagospanspan class=tag&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+            span class=tag&lt;xschoice&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valtarjetaspanspan class=tag&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valnumerospan
+                                span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valtitularspan
+                                span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+              span class=tag&lt;xselement&gt;span
+              span class=tag&lt;xselementspan span class=attrnamespan=span class=valtransferenciaspanspan class=tag&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                    span class=tag&lt;xselementspan span class=attrnamespan=span class=valibanspan
+                                span class=attrtypespan=span class=valxsstringspanspan class=tag&gt;span
+                  span class=tag&lt;xssequence&gt;span
+                span class=tag&lt;xscomplexType&gt;span
+              span class=tag&lt;xselement&gt;span
+            span class=tag&lt;xschoice&gt;span
+          span class=tag&lt;xscomplexType&gt;span
+        span class=tag&lt;xselement&gt;span
+
+      span class=tag&lt;xssequence&gt;span
+    span class=tag&lt;xscomplexType&gt;span
+  span class=tag&lt;xselement&gt;span
+
+span class=tag&lt;xsschema&gt;spanpre
+        div
+      div
+    div
+
+  div
+div
+body
+html

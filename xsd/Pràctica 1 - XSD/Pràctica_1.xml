@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExpedientesAlquiler>
+    <Expediente referencia="EXP001" fechaCreacion="2023-10-01" situacion="Reservado">
+        <Cliente tipo="empresa">
+            <Nombre>TechCorp S.A.</Nombre>
+            <CIF>B12345678</CIF>
+        </Cliente>
+        <Evento>
+            <Nombre>Presentación Producto</Nombre>
+            <Fecha>2023-11-15</Fecha>
+            <Localidad>Madrid</Localidad>
+        </Evento>
+        <Tecnicos>
+            <Tecnico>
+                <Nombre>Carlos López</Nombre>
+                <Especialidad>Audio</Especialidad>
+            </Tecnico>
+        </Tecnicos>
+        <Materiales>
+            <Material>
+                <Codigo>MAT001</Codigo>
+                <Categoria>Audio</Categoria>
+                <Descripcion>Micrófono inalámbrico</Descripcion>
+                <Cantidad>2</Cantidad>
+                <Precio tipo="dia">15.00</Precio>
+                <Seguro>true</Seguro>
+            </Material>
+            <Material>
+                <Codigo>MAT002</Codigo>
+                <Categoria>Video</Categoria>
+                <Descripcion>Proyector HD</Descripcion>
+                <Cantidad>1</Cantidad>
+                <Precio tipo="dia">50.00</Precio>
+            </Material>
+        </Materiales>
+        <Entrega tipo="transporte">
+            <Direccion>Calle Gran Vía 123, Madrid</Direccion>
+        </Entrega>
+    </Expediente>
+    <Expediente referencia="EXP002" fechaCreacion="2023-09-15" situacion="Cerrado">
+        <Cliente tipo="particular">
+            <Nombre>Ana García</Nombre>
+            <DNI>12345678A</DNI>
+        </Cliente>
+        <Evento>
+            <Nombre>Concierto Familiar</Nombre>
+            <Fecha>2023-10-20</Fecha>
+            <Localidad>Barcelona</Localidad>
+        </Evento>
+        <Materiales>
+            <Material>
+                <Codigo>MAT003</Codigo>
+                <Categoria>Iluminación</Categoria>
+                <Descripcion>Foco LED</Descripcion>
+                <Cantidad>4</Cantidad>
+                <Precio tipo="unidad">25.00</Precio>
+            </Material>
+        </Materiales>
+        <Entrega tipo="recogida"/>
+        <Devolucion>
+            <Fecha>2023-10-25</Fecha>
+            <Incidencias>
+                <Incidencia>
+                    <Descripcion>Daño menor en un foco</Descripcion>
+                    <FechaRegistro>2023-10-25</FechaRegistro>
+                    <Gravedad>Media</Gravedad>
+                </Incidencia>
+            </Incidencias>
+        </Devolucion>
+    </Expediente>
+</ExpedientesAlquiler>
